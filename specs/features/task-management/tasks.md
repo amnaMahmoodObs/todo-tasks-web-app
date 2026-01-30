@@ -1,3 +1,9 @@
+
+
+
+
+
+
 # Tasks: Task Management
 
 **Input**: Design documents from `/specs/features/task-management/`
@@ -27,9 +33,9 @@ This is a **web app monorepo** with:
 
 **Purpose**: Project initialization and database schema setup
 
-- [X] T001 Create database migration for tasks table with indexes in backend/migrations/ (or apply via SQLModel)
-- [X] T002 [P] Verify environment variables in backend/.env (DATABASE_URL, BETTER_AUTH_SECRET)
-- [X] T003 [P] Verify environment variables in frontend/.env.local (NEXT_PUBLIC_API_URL, BETTER_AUTH_SECRET, DATABASE_URL)
+- [ ] T001 Create database migration for tasks table with indexes in backend/migrations/ (or apply via SQLModel)
+- [ ] T002 [P] Verify environment variables in backend/.env (DATABASE_URL, BETTER_AUTH_SECRET)
+- [ ] T003 [P] Verify environment variables in frontend/.env.local (NEXT_PUBLIC_API_URL, BETTER_AUTH_SECRET, DATABASE_URL)
 
 ---
 
@@ -39,11 +45,11 @@ This is a **web app monorepo** with:
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [X] T004 Create Task SQLModel in backend/src/models.py with all fields (id, user_id, title, description, completed, created_at, updated_at)
-- [X] T005 Create Pydantic models (TaskCreate, TaskUpdate, TaskResponse) in backend/src/models.py with validators
-- [X] T006 [P] Create TypeScript Task interface in frontend/lib/types.ts
-- [X] T007 Run database migration to create tasks table with foreign key and indexes
-- [X] T008 [P] Create API client placeholder functions in frontend/lib/api-client.ts (getTasks, createTask, getTask, updateTask, deleteTask, toggleTaskComplete)
+- [ ] T004 Create Task SQLModel in backend/src/models.py with all fields (id, user_id, title, description, completed, created_at, updated_at)
+- [ ] T005 Create Pydantic models (TaskCreate, TaskUpdate, TaskResponse) in backend/src/models.py with validators
+- [ ] T006 [P] Create TypeScript Task interface in frontend/lib/types.ts
+- [ ] T007 Run database migration to create tasks table with foreign key and indexes
+- [ ] T008 [P] Create API client placeholder functions in frontend/lib/api-client.ts (getTasks, createTask, getTask, updateTask, deleteTask, toggleTaskComplete)
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -57,20 +63,20 @@ This is a **web app monorepo** with:
 
 ### Backend Implementation for User Story 1
 
-- [X] T009 [P] [US1] Create tasks router file in backend/src/routes/tasks.py with APIRouter setup
-- [X] T010 [US1] Implement POST /api/{user_id}/tasks endpoint in backend/src/routes/tasks.py (create task)
-- [X] T011 [US1] Add user isolation validation (JWT user_id vs URL user_id) in POST endpoint
-- [X] T012 [US1] Add input validation and error handling (400, 401, 403) in POST endpoint
-- [X] T013 [US1] Register tasks router in backend/src/main.py
+- [ ] T009 [P] [US1] Create tasks router file in backend/src/routes/tasks.py with APIRouter setup
+- [ ] T010 [US1] Implement POST /api/{user_id}/tasks endpoint in backend/src/routes/tasks.py (create task)
+- [ ] T011 [US1] Add user isolation validation (JWT user_id vs URL user_id) in POST endpoint
+- [ ] T012 [US1] Add input validation and error handling (400, 401, 403) in POST endpoint
+- [ ] T013 [US1] Register tasks router in backend/src/main.py
 
 ### Frontend Implementation for User Story 1
 
-- [X] T014 [P] [US1] Implement createTask function in frontend/lib/api-client.ts (POST request with JWT)
-- [X] T015 [P] [US1] Create TaskForm component in frontend/components/tasks/TaskForm.tsx (Client Component with title/description inputs)
-- [X] T016 [US1] Add HTML5 validation to TaskForm (required, minLength=1, maxLength=200 for title, maxLength=1000 for description)
-- [X] T017 [US1] Add client-side validation and error display in TaskForm.tsx
-- [X] T018 [US1] Create TaskFormDialog component in frontend/components/tasks/TaskFormDialog.tsx (modal wrapper for TaskForm)
-- [X] T019 [US1] Add TaskFormDialog to dashboard page in frontend/app/dashboard/page.tsx (Server Component integration)
+- [ ] T014 [P] [US1] Implement createTask function in frontend/lib/api-client.ts (POST request with JWT)
+- [ ] T015 [P] [US1] Create TaskForm component in frontend/components/tasks/TaskForm.tsx (Client Component with title/description inputs)
+- [ ] T016 [US1] Add HTML5 validation to TaskForm (required, minLength=1, maxLength=200 for title, maxLength=1000 for description)
+- [ ] T017 [US1] Add client-side validation and error display in TaskForm.tsx
+- [ ] T018 [US1] Create TaskFormDialog component in frontend/components/tasks/TaskFormDialog.tsx (modal wrapper for TaskForm)
+- [ ] T019 [US1] Add TaskFormDialog to dashboard page in frontend/app/dashboard/page.tsx (Server Component integration)
 
 **Checkpoint**: At this point, User Story 1 should be fully functional - users can create tasks via the UI
 
@@ -84,19 +90,19 @@ This is a **web app monorepo** with:
 
 ### Backend Implementation for User Story 2
 
-- [X] T020 [P] [US2] Implement GET /api/{user_id}/tasks endpoint in backend/src/routes/tasks.py (list all tasks)
-- [X] T021 [US2] Add user isolation filtering (WHERE user_id = authenticated_user_id) in GET list endpoint
-- [X] T022 [US2] Add ordering by created_at DESC (newest first) in GET list endpoint
-- [X] T023 [US2] Return task count and tasks array in response format
+- [ ] T020 [P] [US2] Implement GET /api/{user_id}/tasks endpoint in backend/src/routes/tasks.py (list all tasks)
+- [ ] T021 [US2] Add user isolation filtering (WHERE user_id = authenticated_user_id) in GET list endpoint
+- [ ] T022 [US2] Add ordering by created_at DESC (newest first) in GET list endpoint
+- [ ] T023 [US2] Return task count and tasks array in response format
 
 ### Frontend Implementation for User Story 2
 
-- [X] T024 [P] [US2] Implement getTasks function in frontend/lib/api-client.ts (GET request with JWT)
-- [X] T025 [P] [US2] Create TaskItem component in frontend/components/tasks/TaskItem.tsx (Client Component displaying single task)
-- [X] T026 [P] [US2] Create TaskList component in frontend/components/tasks/TaskList.tsx (Client Component rendering array of TaskItem)
-- [X] T027 [US2] Fetch tasks server-side in frontend/app/dashboard/page.tsx and pass to TaskList
-- [X] T028 [US2] Add empty state message "No tasks yet. Create your first task!" in TaskList.tsx
-- [X] T029 [US2] Add styling for completed tasks (opacity, strikethrough) in frontend/app/globals.css or TaskItem.tsx
+- [ ] T024 [P] [US2] Implement getTasks function in frontend/lib/api-client.ts (GET request with JWT)
+- [ ] T025 [P] [US2] Create TaskItem component in frontend/components/tasks/TaskItem.tsx (Client Component displaying single task)
+- [ ] T026 [P] [US2] Create TaskList component in frontend/components/tasks/TaskList.tsx (Client Component rendering array of TaskItem)
+- [ ] T027 [US2] Fetch tasks server-side in frontend/app/dashboard/page.tsx and pass to TaskList
+- [ ] T028 [US2] Add empty state message "No tasks yet. Create your first task!" in TaskList.tsx
+- [ ] T029 [US2] Add styling for completed tasks (opacity, strikethrough) in frontend/app/globals.css or TaskItem.tsx
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work - users can create and view tasks
 
