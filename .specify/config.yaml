@@ -1,0 +1,32 @@
+name: hackathon-todo-evolution
+version: "1.0"
+
+description: "Todo app evolution from CLI to cloud-native system"
+
+structure:
+  specs_dir: specs
+  features_dir: specs/features
+  api_dir: specs/api
+  database_dir: specs/database
+  ui_dir: specs/ui
+
+phases:
+  - name: phase1-console
+    path: phase-1-console
+    description: "In-memory Python console todo app"
+    status: completed
+    tech_stack: [python-3.13, uv, in-memory-storage]
+    specs:
+      - specs/00-project-setup.md
+      - specs/01-add-task.md
+      - specs/02-view-tasks.md
+      - specs/03-update-task.md
+      - specs/04-delete-task.md
+      - specs/05-mark-complete.md
+    
+  - name: phase2-web
+    path: phase-2-webapp
+    description: "Full-stack web app with multi-user support"
+    status: in-progress
+    tech_stack: [nextjs-16, fastapi, sqlmodel, neon-postgresql, better-auth]
+    specs_structure: organized (features/api/database/ui)

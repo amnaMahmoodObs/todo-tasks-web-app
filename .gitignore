@@ -1,0 +1,74 @@
+# Python (Phase 1 - Console App)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Node/JavaScript (Phase 2+ - Web App)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn/
+.pnp.*
+.next/
+out/
+*.tsbuildinfo
+.nuxt/
+.cache/
+.parcel-cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+._*
+.Spotlight-V100
+.Trashes
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+coverage/
+*.lcov
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# UV (Python Package Manager)
+.uv/
+
+# Project-specific (Spec-Driven Development)
+.specify/memory/
+history/prompts/
+
