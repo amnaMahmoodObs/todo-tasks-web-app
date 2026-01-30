@@ -80,7 +80,7 @@ export function SignupForm() {
   /**
    * Handle form submission.
    */
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Clear previous errors and success

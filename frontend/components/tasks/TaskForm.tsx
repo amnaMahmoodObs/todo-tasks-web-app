@@ -7,7 +7,7 @@
  * client-side validation, and error handling.
  */
 
-import { useState, FormEvent } from "react";
+import { useState } from "react";
 import type { TaskCreate } from "@/lib/types";
 
 interface TaskFormProps {
@@ -37,7 +37,7 @@ export function TaskForm({
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
