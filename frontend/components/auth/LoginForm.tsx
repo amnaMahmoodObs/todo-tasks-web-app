@@ -98,7 +98,14 @@ export function LoginForm() {
       if (response.token) {
         localStorage.setItem("auth_token", response.token);
         localStorage.setItem("user", JSON.stringify(response.user));
-        console.log("Token stored in localStorage");
+
+        // Also set a client-side cookie for Next.js middleware
+        // Calculate expiry (7 days from now)
+        const expiryDate = new Date();
+        expiryDate.setDate(expiryDate.getDate() + 7);
+        document.cookie = `auth_token=${response.token}; path=/; expires=${expiryDate.toUTCString()}; SameSite=Lax`;
+
+        console.log("Token stored in localStorage and cookie");
       }
 
       // Redirect to dashboard

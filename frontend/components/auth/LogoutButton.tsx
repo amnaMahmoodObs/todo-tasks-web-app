@@ -52,6 +52,9 @@ export function LogoutButton({ className, children }: LogoutButtonProps) {
       localStorage.removeItem("auth_token");
       localStorage.removeItem("user");
 
+      // Clear auth_token cookie
+      document.cookie = "auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=Lax";
+
       setLoading(false);
 
       // Redirect to login
