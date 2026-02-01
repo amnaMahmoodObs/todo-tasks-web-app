@@ -55,8 +55,8 @@ class JWTMiddleware(BaseHTTPMiddleware):
         if request.url.path in public_auth_paths:
             return await call_next(request)
 
-        # Skip authentication for health/docs endpoints
-        if request.url.path in ["/", "/health", "/docs", "/redoc", "/openapi.json"]:
+        # Skip authentication for health/docs endpoints and static files
+        if request.url.path in ["/", "/health", "/docs", "/redoc", "/openapi.json", "/favicon.ico"]:
             return await call_next(request)
 
         # Extract Authorization header
